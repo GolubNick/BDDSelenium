@@ -5,7 +5,8 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(features = "src/test/resources/features/Download.feature",
         glue = "automatictester.glue",
-        format = {"pretty"})
+        format = {"pretty"},
+        plugin = {"json:target/cucumber.json"})
 public class DownloadFeatureRunner extends AbstractTestNGCucumberTests {
 }
 
