@@ -2,6 +2,7 @@ package automatictester.framework;
 
 import automatictester.objects.DownloadPage;
 import automatictester.objects.MainPage;
+import automatictester.objects.YandexPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -14,6 +15,7 @@ public class ParentScenario {
 
     protected DownloadPage downloadPage;
     protected MainPage mainPage;
+    protected YandexPage yandexPage;
 
     protected void startBrowser() {
 
@@ -24,10 +26,15 @@ public class ParentScenario {
 
         downloadPage = new DownloadPage(driver);
         mainPage = new MainPage(driver);
+        yandexPage = new YandexPage(driver);
     }
 
     protected void navigateTo() {
         driver.navigate().to("http://docs.seleniumhq.org/");
+    }
+
+    protected void navigateToYandex() {
+        driver.navigate().to("http://yandex.ru/");
     }
 
     protected void closeBrowser() {

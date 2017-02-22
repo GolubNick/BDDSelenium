@@ -19,6 +19,10 @@ public abstract class DSL {
         driver.findElement(by).click();
     }
 
+    public void setValueInputField(String locator, String value){
+        driver.findElement(By.id(locator)).sendKeys(value);
+    }
+
     public boolean hasElement(By by) {
         return !driver.findElements(by).isEmpty();
     }
