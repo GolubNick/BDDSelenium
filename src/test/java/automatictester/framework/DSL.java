@@ -15,12 +15,16 @@ public abstract class DSL {
         click(By.linkText(text));
     }
 
+    public void clickByXpath(String locator) {
+        click(By.xpath(locator));
+    }
+
     public void click(By by) {
         driver.findElement(by).click();
     }
 
     public void setValueInputField(String locator, String value){
-        driver.findElement(By.id(locator)).sendKeys(value);
+        driver.findElement(By.xpath(locator)).sendKeys(value);
     }
 
     public boolean hasElement(By by) {
